@@ -23,6 +23,8 @@ import {
   bash,
   c,
   tan,
+  kist,
+  saral,
 } from "../assets";
 
 export const navLinks = [
@@ -113,6 +115,31 @@ const technologies = [
 
 const experiences = [
   {
+    title: "Student, HS",
+    company_name: "KIST",
+    icon: kist,
+    iconBg: "#383E56",
+    date: "2020-2022",
+    points: [
+      "Completed HS under NEB curriculum with Computer Science",
+      "President of Sci-Tech Club, managed multiple events",
+      "Organized and held multiple olympiads",
+      "Built robotic projects for multiple Fairs/Hackathons",
+    ],
+  },
+  {
+    title: "Web Developer",
+    company_name: "Saral Shikshya",
+    icon: saral,
+    iconBg: "#383E56",
+    date: "2021-2022",
+    points: [
+      "Interned at Saral Shikshya, developed and maintainied website.",
+      "Implemented responsive design and ensured cross-browser compatibility.",
+      "Participated in code reviews and webinars",
+    ],
+  },
+  {
     title: "Founder/Mentor",
     company_name: "Tech Access Nepal",
     icon: tan,
@@ -120,48 +147,9 @@ const experiences = [
     date: "2021-Present",
     points: [
       "Founded a non-profit to help underpriviledged children in Nepal with robotics.",
-      "Reached 6 districs with 1600+ total students.",
+      "Currently at 6 districs with 1600+ total students.",
       "Organized and managed multiple robotics bootcamps.",
-      "Coded, designed circuits and built 17+ Arduino/IOT projects",
-    ],
-  },
-  {
-    title: "Lorem",
-    company_name: "Lorem",
-    icon: tan,
-    iconBg: "#383E56",
-    date: "Lorem Ipsum",
-    points: [
-      "Nulla nisi nulla aliqua commodo labore veniam cupidatat occaecat.",
-      "Nulla nisi nulla aliqua commodo labore veniam cupidatat occaecat.",
-      "Nulla nisi nulla aliqua commodo labore veniam cupidatat occaecat.",
-      "Nulla nisi nulla aliqua commodo labore veniam cupidatat occaecat.",
-    ],
-  },
-  {
-    title: "Lorem",
-    company_name: "Lorem",
-    icon: tan,
-    iconBg: "#383E56",
-    date: "Lorem Ipsum",
-    points: [
-      "Nulla nisi nulla aliqua commodo labore veniam cupidatat occaecat.",
-      "Nulla nisi nulla aliqua commodo labore veniam cupidatat occaecat.",
-      "Nulla nisi nulla aliqua commodo labore veniam cupidatat occaecat.",
-      "Nulla nisi nulla aliqua commodo labore veniam cupidatat occaecat.",
-    ],
-  },
-  {
-    title: "Lorem",
-    company_name: "Lorem",
-    icon: tan,
-    iconBg: "#383E56",
-    date: "Lorem Ipsum",
-    points: [
-      "Nulla nisi nulla aliqua commodo labore veniam cupidatat occaecat.",
-      "Nulla nisi nulla aliqua commodo labore veniam cupidatat occaecat.",
-      "Nulla nisi nulla aliqua commodo labore veniam cupidatat occaecat.",
-      "Nulla nisi nulla aliqua commodo labore veniam cupidatat occaecat.",
+      "Coded, designed circuits and built 17+ Arduino/IOT projects till date",
     ],
   },
 ];

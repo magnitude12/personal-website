@@ -25,6 +25,9 @@ import bash from "./tech/bash.png";
 import c from "./tech/c.png";
 
 import tan from "./company/tan.png";
+import kist from "./company/kist.jpg";
+import saral from "./company/saral.png";
+
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -59,4 +62,6 @@ export {
   bash,
   c,
   tan,
+  kist,
+  saral,
 };
