@@ -42,10 +42,10 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
-          <p className='text-white text-[18px] font-bold cursor-pointer flex '>
+          <img src={logo} alt='logo' className='w-12 h-14.5 object-contain' />
+          <p className='text-grey text-[17px] cursor-pointer flex '>|</p>
+          <p className='text-white text-[22px] font-bold cursor-pointer flex '>
             Saugat &nbsp;
-            <span className='sm:block hidden'></span>
           </p>
         </Link>
 

@@ -15,14 +15,14 @@ import {
   git,
   figma,
   docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
   carrent,
   jobit,
   tripguide,
   threejs,
+  python,
+  bash,
+  c,
+  tan,
 } from "../assets";
 
 export const navLinks = [
@@ -31,8 +31,8 @@ export const navLinks = [
     title: "About",
   },
   {
-    id: "work",
-    title: "Work",
+    id: "projects",
+    title: "Profile",
   },
   {
     id: "contact",
@@ -42,21 +42,18 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Lorem",
+    title: "Programmer",
     icon: web,
   },
   {
-    title: "Lorem",
+    title: "Robotics Enthusiast",
     icon: mobile,
   },
   {
-    title: "Lorem",
+    title: "Web Developer",
     icon: backend,
   },
-  {
-    title: "Lorem",
-    icon: creator,
-  },
+  
 ];
 
 const technologies = [
@@ -73,16 +70,24 @@ const technologies = [
     icon: javascript,
   },
   {
-    name: "TypeScript",
-    icon: typescript,
+    name: "Python",
+    icon: python,
+  },
+  {
+    name: "c",
+    icon: c,
+  },
+  {
+    name: "git",
+    icon: git,
+  },
+  {
+    name: "bash",
+    icon: bash,
   },
   {
     name: "React JS",
     icon: reactjs,
-  },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
   },
   {
     name: "Tailwind CSS",
@@ -93,16 +98,8 @@ const technologies = [
     icon: nodejs,
   },
   {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
     name: "Three JS",
     icon: threejs,
-  },
-  {
-    name: "git",
-    icon: git,
   },
   {
     name: "figma",
@@ -116,9 +113,22 @@ const technologies = [
 
 const experiences = [
   {
+    title: "Founder/Mentor",
+    company_name: "Tech Access Nepal",
+    icon: tan,
+    iconBg: "#383E56",
+    date: "2021-Present",
+    points: [
+      "Founded a non-profit to help underpriviledged children in Nepal with robotics.",
+      "Reached 6 districs with 1600+ total students.",
+      "Organized and managed multiple robotics bootcamps.",
+      "Coded, designed circuits and built 17+ Arduino/IOT projects",
+    ],
+  },
+  {
     title: "Lorem",
     company_name: "Lorem",
-    icon: starbucks,
+    icon: tan,
     iconBg: "#383E56",
     date: "Lorem Ipsum",
     points: [
@@ -131,7 +141,7 @@ const experiences = [
   {
     title: "Lorem",
     company_name: "Lorem",
-    icon: starbucks,
+    icon: tan,
     iconBg: "#383E56",
     date: "Lorem Ipsum",
     points: [
@@ -144,20 +154,7 @@ const experiences = [
   {
     title: "Lorem",
     company_name: "Lorem",
-    icon: starbucks,
-    iconBg: "#383E56",
-    date: "Lorem Ipsum",
-    points: [
-      "Nulla nisi nulla aliqua commodo labore veniam cupidatat occaecat.",
-      "Nulla nisi nulla aliqua commodo labore veniam cupidatat occaecat.",
-      "Nulla nisi nulla aliqua commodo labore veniam cupidatat occaecat.",
-      "Nulla nisi nulla aliqua commodo labore veniam cupidatat occaecat.",
-    ],
-  },
-  {
-    title: "Lorem",
-    company_name: "Lorem",
-    icon: starbucks,
+    icon: tan,
     iconBg: "#383E56",
     date: "Lorem Ipsum",
     points: [
