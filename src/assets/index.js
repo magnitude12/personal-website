@@ -25,7 +25,7 @@ import bash from "./tech/bash.png";
 import c from "./tech/c.png";
 
 import tan from "./company/tan.png";
-import kist from "./company/kist.jpg";
+import kist from "./company/kist.png";
 import saral from "./company/saral.png";
 
 
