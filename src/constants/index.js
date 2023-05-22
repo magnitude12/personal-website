@@ -1,30 +1,29 @@
 import {
   mobile,
   backend,
-  creator,
   web,
   javascript,
-  typescript,
   html,
   css,
   reactjs,
-  redux,
   tailwind,
   nodejs,
-  mongodb,
   git,
-  figma,
+  fire,
   docker,
-  carrent,
-  jobit,
-  tripguide,
   threejs,
   python,
   bash,
   c,
+  compost,
+  cansat,
   tan,
+  garden,
+  weatherstation,
   kist,
   saral,
+  autobot,
+  predict,
 } from "../assets";
 
 export const navLinks = [
@@ -104,8 +103,8 @@ const technologies = [
     icon: threejs,
   },
   {
-    name: "figma",
-    icon: figma,
+    name: "Firebase",
+    icon: fire,
   },
   {
     name: "docker",
@@ -183,66 +182,152 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Lorem",
+    name: "CanSat",
     description:
-      "Nulla nisi nulla aliqua commodo labore veniam cupidatat occaecat.",
+      "A working model of a Can Satellite, capable of transmitting multiple metrics",
     tags: [
       {
-        name: "react",
+        name: "C++",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "RF",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "Esp",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "firebase",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
+    image: cansat,
     source_code_link: "https://github.com/",
   },
   {
-    name: "Lorem",
+    name: "Fire Prediction System",
     description:
-      "Nulla nisi nulla aliqua commodo labore veniam cupidatat occaecat.",
+      "An AI model that predicts fire hotspots;nodes to relay live data and compute a risk value",
     tags: [
       {
-        name: "react",
+        name: "AI/ML",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "Firebase",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "C++",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "Javascript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Esp",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
+    image: predict,
     source_code_link: "https://github.com/",
   },
   {
-    name: "Lorem",
+    name: "Smart Compost",
     description:
-      "Nulla nisi nulla aliqua commodo labore veniam cupidatat occaecat.",
+      "A AI powered home composting system that turns wastes into compost while learning",
     tags: [
       {
-        name: "react",
+        name: "AI/ML",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "C++",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "Javascript",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "Esp",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "html/css",
+        color: "green-text-gradient",
+      },
+    ],
+    image: compost,
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "Driverless Car",
+    description:
+      "A model car capable of avoiding obstacles, following lanes, maps and remote control",
+    tags: [
+      {
+        name: "Esp/Arduino",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "C++",
+        color: "green-text-gradient",
+      },
+      {
+        name: "IOT",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
+    image: autobot,
+    source_code_link: "https://github.com/",
+  },  {
+    name: "Automatic Irrigator",
+    description:
+      "An automatic irrigation system that waters plants based on sensor readings",
+    tags: [
+      {
+        name: "Esp/Arduino",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "C++",
+        color: "green-text-gradient",
+      },
+      {
+        name: "IOT",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: garden,
+    source_code_link: "https://github.com/",
+  },  {
+    name: "Remote Weather Station",
+    description:
+      "A weather station that relays remote weather data to the central server wirelessly.",
+    tags: [
+      {
+        name: "Esp/Arduino",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "C++",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Firebase",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "RF",
+        color: "green-text-gradient",
+      },
+
+    ],
+    image: weatherstation,
     source_code_link: "https://github.com/",
   },
 ];
