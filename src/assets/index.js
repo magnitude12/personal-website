@@ -24,6 +24,9 @@ import fire from "./tech/fire.svg"
 import tan from "./company/tan.png";
 import kist from "./company/kist.png";
 import saral from "./company/saral.png";
+import ku from "./company/ku.png";
+import coas from "./company/coas.png";
+
 
 
 import cansat from "./cansat.png";
@@ -32,7 +35,7 @@ import autobot from "./autobot.jpg"
 import compost from "./compost.png"
 import garden from "./garden.png"
 import weatherstation from "./weatherstation.png"
-
+import portfolio from "./portfolio.png"
 
 
 
@@ -49,6 +52,7 @@ export {
   git,
   html,
   javascript,
+  ku,
   nodejs,
   reactjs,
   tailwind,
@@ -57,12 +61,14 @@ export {
   python,
   bash,
   c,
+  coas,
   garden,
   compost,
   predict,
   autobot,
   tan,
   kist,
+  portfolio,
   fire,
   weatherstation,
   saral,
