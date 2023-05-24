@@ -3,6 +3,7 @@ import {
   backend,
   web,
   javascript,
+  ku,
   html,
   css,
   reactjs,
@@ -13,8 +14,10 @@ import {
   docker,
   threejs,
   python,
+  portfolio,
   bash,
   c,
+  coas,
   compost,
   cansat,
   tan,
@@ -136,6 +139,31 @@ const experiences = [
       "Interned at Saral Shikshya, developed and maintainied website.",
       "Implemented responsive design and ensured cross-browser compatibility.",
       "Participated in code reviews and webinars",
+    ],
+  },
+  {
+    title: "National Winner",
+    company_name: "KU Aviskar National Hardware Hackathon",
+    icon: ku,
+    iconBg: "#383E56",
+    date: "2023",
+    points: [
+      "Participated in Aviskar 2023, Kathmandu University",
+      "Competed under hardware hackathon category",
+      "Awarded as the national winner",
+    ],
+  },
+  {
+    title: "National Winner",
+    company_name: "COAS GRAND NATIONALS 2023",
+    icon: coas,
+    iconBg: "#383E56",
+    date: "2023",
+    points: [
+      "Participated in the Chief of Army Staff Science event by Nepal's military",
+      "Prepared project under AI/ML innovation",
+      "Awarded the national winner",
+      "Distinguished with the star scientist merit by Nepal Army's Cheif of Staff.",
     ],
   },
   {
@@ -304,7 +332,8 @@ const projects = [
     ],
     image: garden,
     source_code_link: "https://github.com/",
-  },  {
+  },
+  {
     name: "Remote Weather Station",
     description:
       "A weather station that relays remote weather data to the central server wirelessly.",
@@ -328,6 +357,28 @@ const projects = [
 
     ],
     image: weatherstation,
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "Portfolio",
+    description:
+      "A 3d web portfolio I built for myself, you are here right now.",
+    tags: [
+      {
+        name: "React",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "3js",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Tailwind",
+        color: "pink-text-gradient",
+      },
+
+    ],
+    image: portfolio,
     source_code_link: "https://github.com/",
   },
 ];
