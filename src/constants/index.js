@@ -19,6 +19,7 @@ import {
   c,
   coas,
   compost,
+  creator,
   cansat,
   tan,
   garden,
@@ -54,9 +55,14 @@ const services = [
     icon: mobile,
   },
   {
+    title: "AI/Automation",
+    icon: creator,
+  },
+  {
     title: "Web Developer",
     icon: backend,
   },
+  
   
 ];
 
@@ -174,7 +180,7 @@ const experiences = [
     date: "2021-Present",
     points: [
       "Founded a non-profit to help underpriviledged children in Nepal with robotics.",
-      "Currently at 6 districs with 1600+ total students.",
+      "Currently at 6 districts with 1600+ total students.",
       "Organized and managed multiple robotics bootcamps.",
       "Coded, designed circuits and built 17+ Arduino/IOT projects till date",
     ],
