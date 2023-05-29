@@ -363,7 +363,7 @@ const projects = [
 
     ],
     image: weatherstation,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/magnitude12/Weather-StationESP",
   },
   {
     name: "Portfolio",
@@ -385,7 +385,7 @@ const projects = [
 
     ],
     image: portfolio,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/magnitude12/personal-website",
   },
 ];
 
