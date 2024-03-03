@@ -47,10 +47,10 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        Hi, I'm Saugat. I'm a student from Nepal currently on my gap year.
-        I'm a programmer and robotics enthusiast mostly working with microcontrollers.
-        I mostly use C++ and python and on my spare time I dabble with web development.
-        I'm currently involved in a couple of Projects you'll find listed here.
+        Hi, I'm Saugat.
+        I'm a AI and robotics enthusiast mostly working with microcontrollers.
+        I mostly use C++ and python and on my spare time I dabble with GIS systems.
+        I'm currently involved in a couple of Projects you might find listed here.
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10'>
