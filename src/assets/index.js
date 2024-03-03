@@ -27,7 +27,7 @@ import kist from "./company/kist.png";
 import saral from "./company/saral.png";
 import ku from "./company/ku.png";
 import coas from "./company/coas.png";
-
+import nasa from "./company/nasa.png"
 
 
 import cansat from "./cansat.png";
@@ -64,6 +64,7 @@ export {
   bash,
   c,
   coas,
+  nasa,
   garden,
   compost,
   predict,

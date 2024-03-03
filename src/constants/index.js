@@ -18,6 +18,7 @@ import {
   bash,
   c,
   coas,
+  nasa,
   compost,
   creator,
   cansat,
@@ -140,18 +141,6 @@ const experiences = [
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Saral Shikshya",
-    icon: saral,
-    iconBg: "#383E56",
-    date: "2021-2022",
-    points: [
-      "Interned at Saral Shikshya, developed and maintainied website.",
-      "Implemented responsive design and ensured cross-browser compatibility.",
-      "Participated in code reviews and webinars",
-    ],
-  },
-  {
     title: "National Winner",
     company_name: "KU Aviskar National Hardware Hackathon",
     icon: ku,
@@ -174,6 +163,29 @@ const experiences = [
       "Prepared project under AI/ML innovation",
       "Awarded the national winner",
       "Distinguished with the star scientist merit by Nepal Army's Cheif of Staff.",
+    ],
+  },
+  {
+    title: "Global Finalist",
+    company_name: "NASA INTERNATIONAL SPACEAPPS CHALLENGE 2023",
+    icon: nasa,
+    iconBg: "#383E56",
+    date: "2023",
+    points: [
+      "Nominated as global nominee from Nepal.",
+      "Selected as Top 40 as global finalists among 58,000 participants from 152 countries worldwide",
+    ],
+  },
+  {
+    title: "Web Developer",
+    company_name: "Saral Shikshya",
+    icon: saral,
+    iconBg: "#383E56",
+    date: "2021-2022",
+    points: [
+      "Interned at Saral Shikshya, developed and maintainied website.",
+      "Implemented responsive design and ensured cross-browser compatibility.",
+      "Participated in code reviews and webinars",
     ],
   },
   {
