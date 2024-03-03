@@ -9,12 +9,12 @@ const Astro = ({ isMobile }) => {
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.15} groundColor='black' />
+      <hemisphereLight intensity={0.50} groundColor='black' />
       <spotLight
-        position={[-20, 50, 10]}
+        position={[-10, 20, 5]}
         angle={.12}
         penumbra={1}
-        intensity={1}
+        intensity={1800}
         castShadow
         shadow-mapSize={1024}
       />
