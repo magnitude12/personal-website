@@ -39,7 +39,7 @@ const Contact = () => {
           from_name: form.name,
           to_name: "Saugat",
           from_email: form.email,
-          to_email: "saugat@saugat.me",
+          to_email: "saugat@saugatsapkota.com",
           message: form.message,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
@@ -47,7 +47,7 @@ const Contact = () => {
       .then(
         () => {
           setLoading(false);
-          alert("Ayy thanks for reaching out, I'll get back to you asap!");
+          alert("Thanks for reaching out, I'll get back to you asap!");
 
           setForm({
             name: "",
