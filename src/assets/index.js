@@ -28,6 +28,9 @@ import saral from "./company/saral.png";
 import ku from "./company/ku.png";
 import coas from "./company/coas.png";
 import nasa from "./company/nasa.png"
+import TU from "./company/TU.png";
+import recham from "./company/recham.jpg";
+import msu from "./company/msu.png";
 
 
 import cansat from "./cansat.png";
@@ -75,4 +78,7 @@ export {
   fire,
   weatherstation,
   saral,
+  TU,
+  recham,
+  msu,
 };

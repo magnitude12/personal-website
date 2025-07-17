@@ -48,9 +48,9 @@ const About = () => {
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
         Hi, I'm Saugat.
-        I'm a AI and robotics enthusiast mostly working with microcontrollers.
-        I mostly use C++ and python and on my spare time I dabble with GIS systems.
-        I'm currently involved in a couple of Projects you might find listed here.
+        I'm an AI and robotics enthusiast mostly working with microcontrollers.
+        I also dabble with GIS systems and weather simulations.
+        Feel free to explore some of my projects below!
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10'>

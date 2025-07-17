@@ -29,6 +29,9 @@ import {
   saral,
   autobot,
   predict,
+  TU,
+  recham,
+  msu,
 } from "../assets";
 
 export const navLinks = [
@@ -128,16 +131,49 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Student, HS",
-    company_name: "KIST",
-    icon: kist,
+    title: "Undergraduate Researcher",
+    company_name: "Department of Geosciences, Mississippi State University",
+    icon: msu,
     iconBg: "#383E56",
-    date: "2020-2022",
+    date: "2022-2024",
     points: [
-      "Completed HS under NEB curriculum with Computer Science",
-      "President of Sci-Tech Club, managed multiple events",
-      "Organized and held multiple olympiads",
-      "Built robotic projects for multiple Fairs/Hackathons",
+      "Researching effects of custom LULC datasets on long term climate projections of Numerical Weather Prediction Models",
+      "Configured WRF models to determine optimal climate projection hyperparameters for the Mississippi delta region",
+      "Training fine tuned ML models to classify high resolution satellite imagery for climate modeling"
+    ],
+  },
+  {
+    title: "Research Internship",
+    company_name: "Tribhuvan University",
+    icon: TU,
+    iconBg: "#383E56",
+    date: "2022-2024",
+    points: [
+      "Researched and developed Nepal’s most accurate AI model for wildfire vulnerability assessment under a national research priority project",
+      "Built a live portal to visualize current conditions and predictions of fire and drought throughout Nepal",
+      "Configured server for Numerical Weather Prediction and used WRF to conduct weather simulations to study climate induced extreme disaster events inside Nepal.",
+    ],
+  },{
+    title: "Software Developer",
+    company_name: "RECHAM Consult",
+    icon: recham,
+    iconBg: "#383E56",
+    date: "2021-2024",
+    points: [
+      "Developed various AI models to predict and analyze pollution patterns in Kathmandu Valley",
+      "Used satellite imagery near to high pollution events inside Nepal to analyze correlation to visibility at Nepal’s major airports.",
+      "Designed and developed a ESP based device to measure recharge rate of wells/aquifiers."
+    ],
+  },
+    {
+    title: "Global Finalist",
+    company_name: "NASA INTERNATIONAL SPACEAPPS CHALLENGE 2023",
+    icon: nasa,
+    iconBg: "#383E56",
+    date: "2023",
+    points: [
+      "Nominated as global nominee from Nepal.",
+      "Selected as Top 40 as global finalists among 58,000 participants from 152 countries worldwide",
     ],
   },
   {
@@ -166,17 +202,6 @@ const experiences = [
     ],
   },
   {
-    title: "Global Finalist",
-    company_name: "NASA INTERNATIONAL SPACEAPPS CHALLENGE 2023",
-    icon: nasa,
-    iconBg: "#383E56",
-    date: "2023",
-    points: [
-      "Nominated as global nominee from Nepal.",
-      "Selected as Top 40 as global finalists among 58,000 participants from 152 countries worldwide",
-    ],
-  },
-  {
     title: "Web Developer",
     company_name: "Saral Shikshya",
     icon: saral,
@@ -199,6 +224,19 @@ const experiences = [
       "Currently at 6 districts with 1600+ total students.",
       "Organized and managed multiple robotics bootcamps.",
       "Coded, designed circuits and built 17+ Arduino/IOT projects till date",
+    ],
+  },
+  {
+    title: "Student, HS",
+    company_name: "KIST",
+    icon: kist,
+    iconBg: "#383E56",
+    date: "2020-2022",
+    points: [
+      "Completed HS under NEB curriculum with Computer Science",
+      "President of Sci-Tech Club, managed multiple events",
+      "Organized and held multiple olympiads",
+      "Built robotic projects for multiple Fairs/Hackathons",
     ],
   },
 ];
