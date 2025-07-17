@@ -23,8 +23,6 @@ import c from "./tech/c.png";
 import fire from "./tech/fire.svg"
 
 import tan from "./company/tan.png";
-import kist from "./company/kist.png";
-import saral from "./company/saral.png";
 import ku from "./company/ku.png";
 import coas from "./company/coas.png";
 import nasa from "./company/nasa.png"
@@ -73,11 +71,9 @@ export {
   predict,
   autobot,
   tan,
-  kist,
   portfolio,
   fire,
   weatherstation,
-  saral,
   TU,
   recham,
   msu,

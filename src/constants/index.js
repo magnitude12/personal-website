@@ -25,8 +25,6 @@ import {
   tan,
   garden,
   weatherstation,
-  kist,
-  saral,
   autobot,
   predict,
   TU,
@@ -202,18 +200,6 @@ const experiences = [
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Saral Shikshya",
-    icon: saral,
-    iconBg: "#383E56",
-    date: "2021-2022",
-    points: [
-      "Interned at Saral Shikshya, developed and maintainied website.",
-      "Implemented responsive design and ensured cross-browser compatibility.",
-      "Participated in code reviews and webinars",
-    ],
-  },
-  {
     title: "Founder/Mentor",
     company_name: "Tech Access Nepal",
     icon: tan,
@@ -226,19 +212,7 @@ const experiences = [
       "Coded, designed circuits and built 17+ Arduino/IOT projects till date",
     ],
   },
-  {
-    title: "Student, HS",
-    company_name: "KIST",
-    icon: kist,
-    iconBg: "#383E56",
-    date: "2020-2022",
-    points: [
-      "Completed HS under NEB curriculum with Computer Science",
-      "President of Sci-Tech Club, managed multiple events",
-      "Organized and held multiple olympiads",
-      "Built robotic projects for multiple Fairs/Hackathons",
-    ],
-  },
+
 ];
 
 const testimonials = [
