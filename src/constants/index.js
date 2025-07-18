@@ -133,7 +133,7 @@ const experiences = [
     company_name: "Department of Geosciences, Mississippi State University",
     icon: msu,
     iconBg: "#383E56",
-    date: "2022-2024",
+    date: "2024-Present",
     points: [
       "Researching effects of custom LULC datasets on long term climate projections of Numerical Weather Prediction Models",
       "Configured WRF models to determine optimal climate projection hyperparameters for the Mississippi delta region",
@@ -215,30 +215,36 @@ const experiences = [
 
 ];
 
-const testimonials = [
+const publications = [
   {
-    testimonial:
-      "Nulla nisi nulla aliqua commodo labore veniam cupidatat occaecat.",
-    name: "Lorem Ipsum",
-    designation: "Lorem",
-    company: "Lorem",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+    title: "Advancing wildfire prediction in Nepal using machine learning algorithms",
+    journal: "Environment Research Communications",
+    year: "2025",
+    authors: "Sapkota S, Joshi K.P.P, Kuikel S, Kuinkel D, Bhandari B, Wu Y, Bing H, Marahatta S, Aryal D, Wang S-YS",
+    abstract: "Wildfires are increasingly threatening Nepal, particularly during the dry pre-monsoon months (March-May), leading to severe ecological impacts and disruptions to local communities. To improve wildfire prediction and preparedness, this study evaluated four advanced machine learning algorithm",
+    doi: "10.1088/2515-7620/add2db",
+    status: "Published",
+    tags: ["Wildfires", "Fire Prediction", "Risk Mapping", "Machine Learning"]
   },
   {
-    testimonial:
-      "Nulla nisi nulla aliqua commodo labore veniam cupidatat occaecat.",
-    name: "Lorem Ipsum",
-    designation: "Lorem",
-    company: "Lorem",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+    title: "Impact of wildfire smoke on air pollution-related premature mortality in rapidly growing Kathmandu Valley",
+    journal: "Atmospheric Environment: X",
+    year: "2025",
+    authors: "S Kuikel, H Paudel, D Kuinkel, K Joshi, S Sapkota, N Malakar, S-Y S Wang, B Pokharel",
+    abstract: "The dangers of urban population growth in highly polluted regions are starkly illustrated by the Kathmandu Valley, where nearly half of the days each year exceed the national PM2.5 air quality guideline of 40 μg/m3. Wildfire smoke, particularly during the pre-monsoon season, is a major contributor to air quality degradation. Using diverse datasets, including in-situ observations, satellite data, and machine learning classification, we identified 311 wildfire smoke days between 2003 and 2023",
+    doi: "10.1016/j.aeaoa.2025.100334",
+    status: "Published",
+    tags: ["Air pollution", "Wildfire Smoke", "Population growth", "Disaster Management"]
   },
   {
-    testimonial:
-      "Nulla nisi nulla aliqua commodo labore veniam cupidatat occaecat.",
-    name: "Lorem Ipsum",
-    designation: "Lorem",
-    company: "Lorem",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+    title: "Sensitivity of Regional Hydroclimate Simulations to Land Use and Land Cover Changes​",
+    journal: "Undergraduate Research Symposium",
+    year: "2025",
+    authors: "S Sapkota, B Fosu, Y-H Lin, J Dyer, S Ambinakudige",
+    abstract: "Land use and land cover (LULC) changes significantly influence climate change. Despite their importance, LULC-induced climate feedback remains a major source of uncertainty in climate projection. This study investigates how LULC datasets influence simulated climate dynamics by conducting high-resolution simulations over the United States, downscaled to the Mississippi Delta region. The study utilizes a range of configurations over different LULC datasets to assess how variations influence key climate variables.",
+    doi: "‎ ",
+    status: "Poster",
+    tags: [ "Numerical Weather Prediction","Climate Modelling", "LULC", "Regional Simulations"]
   },
 ];
 
@@ -417,4 +423,4 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, experiences, publications, projects };
