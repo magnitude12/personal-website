@@ -19,20 +19,22 @@ const PublicationCard = ({
 }) => (
   <motion.div
     variants={fadeIn("", "spring", index * 0.5, 0.75)}
-    className='bg-black-200 p-8 rounded-3xl xs:w-[400px] w-full flex flex-col h-[500px]'
+    className='bg-black-200 p-8 rounded-3xl xs:w-[400px] sm:w-[420px] w-full flex flex-col h-[500px]'
   >
-    <div className='flex flex-col flex-grow'>
+    <div className='flex flex-col h-full'>
       <div className='h-[80px] mb-4 flex items-start'>
         <h3 className='text-white font-bold text-[20px] leading-tight line-clamp-3'>
           {title}
         </h3>
       </div>
       
-      <div className='h-[80px] mb-4'>
-        <p className='text-secondary text-[14px] mb-1'>
-          <span className='text-white font-medium'>{journal}</span> • {year}
-        </p>
-        <p className='text-secondary text-[12px] mb-2 line-clamp-2'>{authors}</p>
+      <div className='h-[100px] mb-4 flex flex-col justify-between'>
+        <div>
+          <p className='text-secondary text-[14px] mb-1'>
+            <span className='text-white font-medium'>{journal}</span> • {year}
+          </p>
+          <p className='text-secondary text-[12px] mb-2 line-clamp-2'>{authors}</p>
+        </div>
         <div className='flex items-center gap-2'>
           <span className={`px-2 py-1 rounded-full text-[10px] font-medium ${
             status === 'Published' ? 'bg-green-600 text-white' :
@@ -45,7 +47,7 @@ const PublicationCard = ({
         </div>
       </div>
 
-      <div className='flex-grow mb-4'>
+      <div className='flex-1 mb-4 min-h-0'>
         <p className='text-white tracking-wider text-[14px] line-clamp-6'>
           {abstract}
         </p>
