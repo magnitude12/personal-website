@@ -18,8 +18,7 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-    const { target } = e;
-    const { name, value } = target;
+    const { name, value } = e.target;
 
     setForm({
       ...form,
@@ -31,21 +30,15 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
+    // Using sendForm is often cleaner when using a Ref
     emailjs
-      .send(
+      .sendForm(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          to_name: "Saugat",
-          from_email: form.email,
-          to_email: "saugat@saugatsapkota.com",
-          message: form.message,
-        },
+        formRef.current, // Pass the form ref here
         {
           publicKey: import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
         }
-        
       )
       .then(
         () => {
@@ -61,16 +54,13 @@ const Contact = () => {
         (error) => {
           setLoading(false);
           console.error(error);
-
           alert("Damn, an error. Mind giving another go?");
         }
       );
   };
 
   return (
-    <div
-      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
-    >
+    <div className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}>
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
         className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
@@ -79,7 +69,7 @@ const Contact = () => {
         <h3 className={styles.sectionHeadText}>Contact.</h3>
 
         <form
-          ref={formRef}
+          ref={formRef} // This is the bridge to emailjs.sendForm
           onSubmit={handleSubmit}
           className='mt-12 flex flex-col gap-8'
         >
@@ -87,33 +77,36 @@ const Contact = () => {
             <span className='text-white font-medium mb-4'>Your Name</span>
             <input
               type='text'
-              name='name'
+              name='name' // Ensure this matches your EmailJS template variable {{name}}
               value={form.name}
               onChange={handleChange}
               placeholder="Give me your name please"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              required
             />
           </label>
           <label className='flex flex-col'>
             <span className='text-white font-medium mb-4'>Your email</span>
             <input
               type='email'
-              name='email'
+              name='email' // Ensure this matches {{email}}
               value={form.email}
               onChange={handleChange}
               placeholder="Your email?"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              required
             />
           </label>
           <label className='flex flex-col'>
             <span className='text-white font-medium mb-4'>Your Message</span>
             <textarea
               rows={7}
-              name='message'
+              name='message' // Ensure this matches {{message}}
               value={form.message}
               onChange={handleChange}
               placeholder="What is your message?"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              required
             />
           </label>
 
@@ -127,12 +120,11 @@ const Contact = () => {
       </motion.div>
 
       <motion.div
-      variants={slideIn("right", "tween", 0.2, 1)}
-      className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
-    >
-      <AstroCanvas />
-    </motion.div>
-
+        variants={slideIn("right", "tween", 0.2, 1)}
+        className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
+      >
+        <AstroCanvas />
+      </motion.div>
     </div>
   );
 };
