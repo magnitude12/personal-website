@@ -30,21 +30,21 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-    // Using sendForm is often cleaner when using a Ref
+    console.log(import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY);
     emailjs
       .sendForm(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-        formRef.current, // Pass the form ref here
+        formRef.current, 
         {
           publicKey: import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
         
         },
+
       )
       .then(
         () => {
           setLoading(false);
-          console.log(import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY);
           alert("Thanks for reaching out, I'll get back to you asap!");
 
           setForm({
@@ -59,6 +59,7 @@ const Contact = () => {
           alert("Damn, an error. Mind giving another go?");
         },
       );
+      console.log(import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY);
   };
 
   return (
