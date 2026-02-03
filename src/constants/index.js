@@ -19,6 +19,7 @@ import {
   c,
   coas,
   nasa,
+  placeholder,
   compost,
   creator,
   cansat,
@@ -249,6 +250,94 @@ const publications = [
 ];
 
 const projects = [
+  {
+    name: "BattleBot",
+    description:
+      "A remote-controlled combat robot featuring a high-torque weapon system and a custom-fabricated chassis.",
+    tags: [
+      {
+        name: "Arduino",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "CAD",
+        color: "green-text-gradient",
+      },
+      {
+        name: "3D Printing",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: placeholder,
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "Inverted Pendulum Bot",
+    description:
+      "A self-balancing robot utilizing PID control loops and sensor fusion (Kalman Filter) on a custom-designed PCB.",
+    tags: [
+      {
+        name: "STM32",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Control Theory",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Altium Designer",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: placeholder,
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "Autonomous NAV Rover",
+    description:
+      "A LIDAR-equipped rover capable of SLAM (Simultaneous Localization and Mapping) and autonomous path planning.",
+    tags: [
+      {
+        name: "ROS 2",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Python/C++",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Linux",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "Computer Vision",
+        color: "blue-text-gradient",
+      },
+    ],
+    image: placeholder,
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "4-DOF Robotic Arm",
+    description:
+      "A manipulator arm implementing inverse kinematics for precise pick-and-place operations.",
+    tags: [
+      {
+        name: "Matlab/Simulink",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Kinematics",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Mechatronics",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: placeholder,
+    source_code_link: "https://github.com/",
+  },
   {
     name: "CanSat",
     description:
