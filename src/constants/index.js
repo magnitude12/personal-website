@@ -20,6 +20,8 @@ import {
   coas,
   nasa,
   placeholder,
+  balancebot,
+  battlebot,
   compost,
   creator,
   cansat,
@@ -268,7 +270,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: placeholder,
+    image: battlebot,
     source_code_link: "https://github.com/",
   },
   {
@@ -289,7 +291,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: placeholder,
+    image: balancebot,
     source_code_link: "https://github.com/",
   },
   {

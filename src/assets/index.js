@@ -38,6 +38,8 @@ import compost from "./compost.png"
 import garden from "./garden.png"
 import weatherstation from "./weatherstation.png"
 import portfolio from "./portfolio.png"
+import battlebot from "./battlebot.png"
+import balancebot from "./balancebot.png"
 import placeholder from "./placeholder.png"
 
 
@@ -71,6 +73,8 @@ export {
   compost,
   predict,
   autobot,
+  battlebot,
+  balancebot,
   tan,
   placeholder,
   portfolio,
