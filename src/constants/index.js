@@ -33,6 +33,7 @@ import {
   TU,
   recham,
   msu,
+  geosciences,
 } from "../assets";
 
 export const navLinks = [
@@ -133,8 +134,8 @@ const technologies = [
 const experiences = [
   {
     title: "Undergraduate Researcher",
-    company_name: "Department of Geosciences, Mississippi State University",
-    icon: msu,
+    company_name: "Climate Lab - MSU, Dept of Geosciences",
+    icon: geosciences,
     iconBg: "#383E56",
     date: "2024-Present",
     points: [

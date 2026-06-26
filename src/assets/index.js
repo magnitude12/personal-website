@@ -29,6 +29,7 @@ import nasa from "./company/nasa.png"
 import TU from "./company/TU.png";
 import recham from "./company/recham.jpg";
 import msu from "./company/msu.png";
+import geosciences from "./company/geosciences.svg"
 
 
 import cansat from "./cansat.png";
@@ -83,4 +84,5 @@ export {
   TU,
   recham,
   msu,
+  geosciences,
 };
