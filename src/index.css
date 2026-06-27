@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @import "tailwindcss";
-
 @theme {
   --color-primary: #050816;
   --color-secondary: #aaa6c3;
@@ -9,21 +8,42 @@
   --color-black-100: #100d25;
   --color-black-200: #090325;
   --color-white-100: #f3f3f3;
-
   --shadow-card: 0px 35px 120px -15px #211e35;
-
-  --breakpoint-xs: 450px;
-
   --background-image-hero-pattern: url('/src/assets/herobg.png');
 }
-@variant xs { @media (width >= 450px) { @slot } }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-  scroll-behavior: smooth;
-  color-scheme: dark;
+
+.section-padding {
+  @apply sm:px-16 px-6 sm:py-16 py-10;
+}
+.section-padding-x {
+  @apply sm:px-16 px-6;
+}
+.section-padding-y {
+  @apply sm:py-16 py-6;
+}
+
+.hero-head-text {
+  @apply font-black text-white lg:text-[80px] sm:text-[60px] min-[450px]:text-[50px] text-[40px] lg:leading-[98px] mt-2;
+}
+.hero-sub-text {
+  @apply text-[#dfd9ff] font-medium lg:text-[30px] sm:text-[26px] min-[450px]:text-[20px] text-[16px] lg:leading-[40px];
+}
+.section-head-text {
+  @apply text-white font-black md:text-[60px] sm:text-[50px] min-[450px]:text-[40px] text-[30px];
+}
+.section-sub-text {
+  @apply sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider;
+}
+
+@layer base {
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
 }
 
 .hash-span {

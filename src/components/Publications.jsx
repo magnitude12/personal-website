@@ -19,7 +19,7 @@ const PublicationCard = ({
 }) => (
   <motion.div
     variants={fadeIn("", "spring", index * 0.5, 0.75)}
-    className='bg-black-200 p-8 rounded-3xl xs:w-[400px] sm:w-[420px] w-full flex flex-col h-[500px]'
+    className='bg-black-200 p-8 rounded-3xl min-[450px]:w-[400px] sm:w-[420px] w-full flex flex-col h-[500px]'
   >
     <div className='flex flex-col h-full'>
       <div className='h-[80px] mb-4 flex items-start'>
