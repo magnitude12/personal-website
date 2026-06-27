@@ -1,0 +1,40 @@
+name: 1 — Fetch Publications
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'public/publications.json'
+  schedule:
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install scholarly
+        run: pip install scholarly
+
+      - name: Run fetch script
+        env:
+          SCHOLAR_USER_ID: ${{ secrets.SCHOLAR_USER_ID }}
+        run: python scripts/fetch_publications.py
+
+      - name: Commit publications.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/publications.json
+          git diff --cached --quiet && echo "No changes to commit" || \
+            git commit -m "chore: update publications.json [skip ci]" && git push
