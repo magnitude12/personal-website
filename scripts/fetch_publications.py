@@ -112,9 +112,8 @@ def infer_status(journal: str, year) -> str:
     if "review" in j:
         return "Under Review"
     return "Published"
- 
- def setup_proxy():
 
+def setup_proxy():
     scraper_key = os.environ.get("SCRAPER_API_KEY", "")
     if scraper_key:
         try:
