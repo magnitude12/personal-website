@@ -1,5 +1,16 @@
 [
   {
+    "title": "Advancing wildfire prediction in Nepal using machine learning algorithms",
+    "journal": "Environmental Research Communications",
+    "year": "2025",
+    "authors": "Saugat S., Khagendra J., Sajesh K., Dipesh K., Biplov B., Yanhong W., Haijian B., Suresh M., Deepak A., SY W., Binod P.",
+    "abstract": "Wildfires are increasingly threatening Nepal, particularly during the dry pre-monsoon months (March-May), leading to severe ecological impacts and disruptions to local communities. To improve wildfire prediction and preparedness, this study evaluated four advanced machine learning algorithms—Random Forest, Radial Basis Function...",
+    "url": "https://iopscience.iop.org/article/10.1088/2515-7620/add2db/meta",
+    "status": "Published",
+    "tags": [],
+    "citationCount": 9
+  },
+  {
     "title": "Sensitivity of Regional Hydroclimate Simulations to Land Use and Land Cover Changes",
     "journal": "Undergraduate Research Symposium",
     "year": "2025",
@@ -14,5 +25,38 @@
       "Regional Simulations"
     ],
     "citationCount": null
+  },
+  {
+    "title": "Impact of wildfire smoke on air pollution-related premature mortality in rapidly growing Kathmandu Valley",
+    "journal": "",
+    "year": "2025",
+    "authors": "",
+    "abstract": "",
+    "url": "",
+    "status": "Published",
+    "tags": [],
+    "citationCount": 3
+  },
+  {
+    "title": "Detection and Prediction of Wildfire Smoke Contribution to Air Pollution in the Kathmandu Valley Using...",
+    "journal": "AGU24",
+    "year": "2024",
+    "authors": "Sajesh K., Saugat S., Dipesh K., Binod P.",
+    "abstract": "",
+    "url": "https://scholar.google.com/scholar?cluster=15108639545323307919&hl=en&oi=scholarr",
+    "status": "Published",
+    "tags": [],
+    "citationCount": 0
+  },
+  {
+    "title": "Wildfire Occurrence Prediction in Nepal Based on Machine Learning Methods",
+    "journal": "AGU24",
+    "year": "2024",
+    "authors": "Saugat S., Sajesh K., Binod P.",
+    "abstract": "",
+    "url": "https://scholar.google.com/scholar?cluster=9412209383945006673&hl=en&oi=scholarr",
+    "status": "Published",
+    "tags": [],
+    "citationCount": 0
   }
 ]
