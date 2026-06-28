@@ -12,8 +12,9 @@ import sys
 import time
 from pathlib import Path
 
+
 try:
-    from scholarly import scholarly
+    from scholarly import scholarly, ProxyGenerator
 except ImportError:
     print("Error: 'scholarly' not installed. Run: pip install scholarly")
     sys.exit(1)
@@ -47,8 +48,8 @@ def trim_title(title: str) -> str:
     if len(words) <= TITLE_WORD_LIMIT:
         return title
     return " ".join(words[:TITLE_WORD_LIMIT]) + "..."
- 
- 
+
+
 def trim_abstract(abstract: str) -> str:
     if not abstract:
         return ""
@@ -56,55 +57,38 @@ def trim_abstract(abstract: str) -> str:
     if len(words) <= ABSTRACT_WORD_LIMIT:
         return abstract
     return " ".join(words[:ABSTRACT_WORD_LIMIT]) + "..."
- 
- 
+
+
 def format_author(name: str) -> str:
-    """
-    Convert any of these to 'First L.' :
-      'First Last'
-      'First Middle Last'  → omit middle
-      'Last, First'
-      'Last, First Middle' → omit middle
-    """
     name = name.strip()
     if not name:
         return name
     if "," in name:
-        # 'Last, First [Middle]'
         parts = [p.strip() for p in name.split(",", 1)]
         last = parts[0]
         first_parts = parts[1].split() if len(parts) > 1 else []
         first = first_parts[0] if first_parts else ""
         return f"{first} {last[0]}." if first else last
     else:
-        # 'First [Middle] Last'
         parts = name.split()
         if len(parts) == 1:
             return parts[0]
         return f"{parts[0]} {parts[-1][0]}."
- 
- 
+
+
 def format_authors(raw: str) -> str:
-    """
-    scholarly returns authors as 'First Last and First Last ...'
-    Normalise separators then reformat each name.
-    """
     if not raw:
         return ""
-    # Split on ' and ' or '; '
     names = re.split(r"\s+and\s+|;\s*", raw)
     if len(names) == 1:
-        # Might be comma-separated full names: 'First Last, First Last'
-        # vs a single 'Last, First' — disambiguate by token count
         parts = [p.strip() for p in raw.split(",") if p.strip()]
         if len(parts) == 2 and all(len(p.split()) == 1 for p in parts):
-            # 'Last, First' single author
             return format_author(raw)
         names = parts
     formatted = [format_author(n.strip()) for n in names if n.strip()]
     return ", ".join(formatted)
- 
- 
+
+
 def infer_status(journal: str, year) -> str:
     j = (journal or "").lower()
     if "arxiv" in j or "preprint" in j:
@@ -113,33 +97,27 @@ def infer_status(journal: str, year) -> str:
         return "Under Review"
     return "Published"
 
+
 def setup_proxy():
     scraper_key = os.environ.get("SCRAPER_API_KEY", "")
-    if scraper_key:
-        try:
-            pg = ProxyGenerator()
-            pg.ScraperAPI(scraper_key)
-            scholarly.use_proxy(pg)
-            print("Using ScraperAPI proxy")
-            return
-        except Exception as e:
-            print(f"ScraperAPI failed: {e}")
- 
+    if not scraper_key:
+        print("No SCRAPER_API_KEY set — attempting direct connection")
+        return
+
+    proxy_url = f"http://scraperapi:{scraper_key}@proxy-server.scraperapi.com:8001"
     try:
         pg = ProxyGenerator()
-        pg.FreeProxies()
+        pg.SingleProxy(http=proxy_url, https=proxy_url)
         scholarly.use_proxy(pg)
-        print("Using FreeProxies fallback")
-        return
-    except Exception:
-        pass
- 
-    print("No proxy available — attempting direct connection")
+        print("Using ScraperAPI proxy")
+    except Exception as e:
+        print(f"Proxy setup failed: {e} — attempting direct connection")
+
 
 def fetch_scholar(user_id: str) -> list:
     print(f"Fetching Scholar profile for user: {user_id}")
     setup_proxy()
- 
+
     for attempt in range(1, 4):
         try:
             author = scholarly.search_author_id(user_id)
@@ -152,14 +130,14 @@ def fetch_scholar(user_id: str) -> list:
     else:
         print("Warning: All attempts to reach Google Scholar failed.")
         return []
- 
+
     results = []
     for pub in author.get("publications", []):
         try:
             filled = scholarly.fill(pub)
         except Exception:
             filled = pub
- 
+
         bib = filled.get("bib", {})
         title = bib.get("title", "Untitled")
         journal = bib.get("journal") or bib.get("venue") or bib.get("booktitle") or ""
@@ -167,7 +145,7 @@ def fetch_scholar(user_id: str) -> list:
         authors_raw = bib.get("author", "")
         abstract_raw = bib.get("abstract", "")
         url = filled.get("pub_url") or filled.get("eprint_url") or ""
- 
+
         entry = {
             "title": trim_title(title),
             "journal": journal,
@@ -180,11 +158,11 @@ def fetch_scholar(user_id: str) -> list:
             "citationCount": filled.get("num_citations"),
         }
         results.append(entry)
-        print(f"  addes: {title[:60]}{'...' if len(title) > 60 else ''} ({year})")
- 
+        print(f"  added: {title[:60]}{'...' if len(title) > 60 else ''} ({year})")
+
     return results
- 
- 
+
+
 def merge(scholar_pubs: list, hardcoded: list) -> list:
     scholar_titles = {p["title"].lower().strip() for p in scholar_pubs}
     extra = [
@@ -195,7 +173,7 @@ def merge(scholar_pubs: list, hardcoded: list) -> list:
         p["title"] = trim_title(p["title"])
         p["abstract"] = trim_abstract(p.get("abstract", ""))
         p["authors"] = format_authors(p.get("authors", ""))
- 
+
     with_abstract = sorted(
         [p for p in scholar_pubs if p.get("abstract")],
         key=lambda p: p.get("year") or "0", reverse=True
@@ -206,25 +184,25 @@ def merge(scholar_pubs: list, hardcoded: list) -> list:
     )
     combined = with_abstract + extra + without_abstract
     return combined
- 
- 
+
+
 def main():
     user_id = os.environ.get("SCHOLAR_USER_ID", "").strip()
     if not user_id:
         print("Error: SCHOLAR_USER_ID environment variable is not set.")
         sys.exit(1)
- 
+
     scholar_pubs = fetch_scholar(user_id)
     if not scholar_pubs:
         print("No Scholar results — using hardcoded entries only.")
- 
+
     all_pubs = merge(scholar_pubs, HARDCODED)
- 
+
     out_path = Path(__file__).parent.parent / "public" / "publications.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(all_pubs, indent=2, ensure_ascii=False))
     print(f"\nWrote {len(all_pubs)} publications to {out_path}")
- 
- 
+
+
 if __name__ == "__main__":
     main()

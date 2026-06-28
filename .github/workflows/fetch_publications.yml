@@ -24,7 +24,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install scholarly
-        run: pip install scholarly requests[socks]
+        run: pip install scholarly requests[socks] "httpx==0.27.2"
 
       - name: Run fetch script
         env:
