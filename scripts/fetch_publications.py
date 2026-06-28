@@ -9,6 +9,7 @@ import json
 import os
 import re
 import sys
+import time
 from pathlib import Path
 
 try:
@@ -18,7 +19,7 @@ except ImportError:
     sys.exit(1)
 
 
-TITLE_WORD_LIMIT = 13
+TITLE_WORD_LIMIT = 15
 ABSTRACT_WORD_LIMIT = 40
 
 HARDCODED = [
@@ -112,14 +113,45 @@ def infer_status(journal: str, year) -> str:
         return "Under Review"
     return "Published"
  
+ def setup_proxy():
+
+    scraper_key = os.environ.get("SCRAPER_API_KEY", "")
+    if scraper_key:
+        try:
+            pg = ProxyGenerator()
+            pg.ScraperAPI(scraper_key)
+            scholarly.use_proxy(pg)
+            print("Using ScraperAPI proxy")
+            return
+        except Exception as e:
+            print(f"ScraperAPI failed: {e}")
  
+    try:
+        pg = ProxyGenerator()
+        pg.FreeProxies()
+        scholarly.use_proxy(pg)
+        print("Using FreeProxies fallback")
+        return
+    except Exception:
+        pass
+ 
+    print("No proxy available — attempting direct connection")
+
 def fetch_scholar(user_id: str) -> list:
     print(f"Fetching Scholar profile for user: {user_id}")
-    try:
-        author = scholarly.search_author_id(user_id)
-        author = scholarly.fill(author, sections=["publications"])
-    except Exception as e:
-        print(f"Warning: Could not reach Google Scholar — {e}")
+    setup_proxy()
+ 
+    for attempt in range(1, 4):
+        try:
+            author = scholarly.search_author_id(user_id)
+            author = scholarly.fill(author, sections=["publications"])
+            break
+        except Exception as e:
+            print(f"Attempt {attempt} failed: {e}")
+            if attempt < 3:
+                time.sleep(5 * attempt)
+    else:
+        print("Warning: All attempts to reach Google Scholar failed.")
         return []
  
     results = []
@@ -149,7 +181,7 @@ def fetch_scholar(user_id: str) -> list:
             "citationCount": filled.get("num_citations"),
         }
         results.append(entry)
-        print(f"  ✓ {title[:60]}{'...' if len(title) > 60 else ''} ({year})")
+        print(f"  addes: {title[:60]}{'...' if len(title) > 60 else ''} ({year})")
  
     return results
  
